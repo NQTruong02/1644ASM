@@ -54,8 +54,8 @@ app.use(function(err, req, res, next) {
 });
 
 //setup port for deployment
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 app.listen(port, () => {
-  console.log("Server is running at http://localhost:3000");
+  console.log("Server is running at http://localhost:3001");
 });
 module.exports = app;
