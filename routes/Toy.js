@@ -3,9 +3,6 @@ const ToyModel = require('../models/ToyModels');
 var router = express.Router();
 
 
-
-
-
 router.get('/', async (req, res) => {
    var Toy_Index = await ToyModel.find({})
    res.render('Toy/index', { Toy : Toy_Index })
@@ -14,6 +11,12 @@ router.get('/Buy', async (req, res) => {
    var Toy_Buy = await ToyModel.find({})
    res.render('Toy/Buy', { Toy: Toy_Buy })
 })
+
+router.get('/Index', async (req, res) => {
+   var Toy_Index = await ToyModel.find({})
+   res.render('Toy/Index', { Toy: Toy_Index })
+})
+
 
 router.get('/AllProduct', async (req, res) => {
    var AllProduct = await ToyModel.find({})
