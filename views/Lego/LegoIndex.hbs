@@ -9,26 +9,26 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/mystyle.css">   
-    <title>All Product page</title>
+    <title>Lego page</title>
 </head>
 <body>
      <div class="header">
         <div class="mt-12 mb-4 bg-success d-flex justify-content-between ">
             <ul class="nav justify-content-center">
                 <li class="nav-item h6 m-0 my-3">
-                    <a class="nav-link text-body" href="/Toy/HomeCus">HOME</a>
+                    <a class="nav-link text-body" href="/Toy/HomeAd">HOME</a>
                 </li>
                 <li class="nav-item h6 m-0 my-3">
-                    <a class="nav-link text-body" href="/Toy/AllProduct">TOY</a>
+                    <a class="nav-link text-body" href="/Toy/AdminAllProduct">TOY</a>
                 </li>
-             
+                  
                 <li class="nav-item h6 m-0 my-3">
-                    <a class="nav-link text-body" href="/Lego/LegoCus">LEGO</a>
+                    <a class="nav-link text-body" href="/Lego/LegoIndex">LEGO</a>
                 </li>
 
                  <li class="nav-item h6 m-0 my-3">
                     <div class="col md-4">
-                        <form action="/Toy/searchBuy" method="post">
+                        <form action="/Lego/searchAdmin" method="post">
                             <input class="form-control" type="search" name="name" placeholder="Search" required>
                         </form>
                     </div>
@@ -43,7 +43,10 @@
         </div>
     </div>
 
-
+    <div class="container col-md-12 mt-3">
+        <th class="text text-primary text-left" colspan="3">
+            <a class="btn btn-secondary" href="/Lego/Add">CREATE NEW PRODUCT</a>
+        </th>
        
         <table class="table table-light mt-2 text-center" border="2">
                 <tr>
@@ -51,24 +54,30 @@
                      <th>Name</th>
                      <th>Image</th>
                      <th>Price</th>
-                     <th>Category</th>
-                     <th>Quantity</th>
+                     <th>Weight</th>
+                     <th>Height</th>
+                     <th>CRUD</th>
                 
                 </tr>
 
-            {{#each Toy }}
+            {{#each Lego }}
                   <tr>
             
                         <th>{{ name }}</th>                  
                         <th>
-                        <a href="/Toy/Detail/{{_id}}">
+                        <a href="/Lego/Detail/{{_id}}">
                            <img src="{{image}}" width="200" height="200" />
                         </a>
                         </th>                   
                         <th>{{ price }}$</th>
-                        <th>{{ category }}</th>
-                        <th>{{ quantity }}</th>    
-                        
+                        <th>{{ weight }}kg</th>
+                        <th>{{ height }}cm</th>   
+
+                        <th>
+                           <a class="btn btn-warning" href="/Lego/Edit/{{_id}}">Edit</a>
+                           <a class="btn btn-danger" href="/Lego/Delete/{{_id}}"
+                        onclick="return confirm('Do you want to delete this toy ?');">Delete</a>
+                        </th>
                   </tr>
             {{/each}}
         </table>

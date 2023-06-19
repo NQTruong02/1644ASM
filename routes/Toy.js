@@ -1,5 +1,6 @@
 var express = require ('express');
 const ToyModel = require('../models/ToyModels');
+
 var router = express.Router();
 
 
@@ -7,14 +8,14 @@ router.get('/', async (req, res) => {
    var Toy_Index = await ToyModel.find({})
    res.render('Toy/index', { Toy : Toy_Index })
 })
-router.get('/Buy', async (req, res) => {
-   var Toy_Buy = await ToyModel.find({})
-   res.render('Toy/Buy', { Toy: Toy_Buy })
+router.get('/HomeCus', async (req, res) => {
+   var HomeCus = await ToyModel.find({})
+   res.render('Toy/HomeCus', { Toy: HomeCus })
 })
 
-router.get('/Index', async (req, res) => {
-   var Toy_Index = await ToyModel.find({})
-   res.render('Toy/Index', { Toy: Toy_Index })
+router.get('/HomeAd', async (req, res) => {
+   var HomeAd = await ToyModel.find({})
+   res.render('Toy/HomeAd', { Toy: HomeAd })
 })
 
 
@@ -30,12 +31,9 @@ router.get('/AdminAllProduct', async (req, res) => {
 
 
 router.get("/Detail/:id", (req, res) => {
-   //lấy giá trị id của document gửi từ url
    var Toy_id = req.params.id;
-   //tìm kiếm document trong collection theo id
    ToyModel.findById(Toy_id, (err, data) => {
      if (!err) {
-       //render ra file detail chứa dữ liệu của document
        res.render("Toy/Detail", { Toy: data });
      }
    });
@@ -95,12 +93,6 @@ router.post("/searchBuy", async (req, res) => {
    
    res.render("Toy/AllProduct", { Toy: resultsBuy })
 })
-
-
-
-
-
-
 
 
 module.exports = router;

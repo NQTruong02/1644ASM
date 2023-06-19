@@ -16,12 +16,14 @@
         <div class="mt-12 mb-4 bg-success d-flex justify-content-between ">
             <ul class="nav justify-content-center">
                 <li class="nav-item h6 m-0 my-3">
-                    <a class="nav-link text-body" href="/Toy/Index">HOME</a>
+                    <a class="nav-link text-body" href="/Toy/HomeAd">HOME</a>
                 </li>
                 <li class="nav-item h6 m-0 my-3">
-                    <a class="nav-link text-body" href="/Toy/AdminAllProduct">PRODUCTS</a>
+                    <a class="nav-link text-body" href="/Toy/AdminAllProduct">TOY</a>
                 </li>
-             
+                <li class="nav-item h6 m-0 my-3">
+                    <a class="nav-link text-body" href="/Lego/LegoIndex">LEGO</a>
+                </li>
 
                  <li class="nav-item h6 m-0 my-3">
                     <div class="col md-4">
@@ -34,7 +36,7 @@
                     <a class="nav-link text-body" href="https://www.facebook.com/iamtruong17052002">About</a>
                 </li>
                 <li class="nav-item h6 m-0 my-3 text-left">
-                    <a class="nav-link text-body" href="/">Login/Logout</a>
+                    <a class="nav-link text-body" href="/">Logout</a>
                 </li>
                 </ul>
         </div>
@@ -68,7 +70,8 @@
                         </th>                   
                         <th>{{ price }}$</th>
                         <th>{{ category }}</th>
-                        <th>{{ quantity }}</th>    
+                        <th>{{ quantity }}</th>   
+
                         <th>
                            <a class="btn btn-warning" href="/Toy/Edit/{{_id}}">Edit</a>
                            <a class="btn btn-danger" href="/Toy/Delete/{{_id}}"

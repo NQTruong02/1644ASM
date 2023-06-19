@@ -11,6 +11,6 @@ var ToySchema = mongoose.Schema(
    }
 );
 
-var ToyModel = mongoose.model("ASM1644ToyStore", ToySchema, "ToyStore");
+var ToyModel = mongoose.model("ToyStore1", ToySchema , "ToyStore1" );
 
 module.exports = ToyModel;

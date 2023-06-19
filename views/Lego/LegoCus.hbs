@@ -9,7 +9,7 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/mystyle.css">   
-    <title>All Product page</title>
+    <title>BuyLego page</title>
 </head>
 <body>
      <div class="header">
@@ -21,14 +21,14 @@
                 <li class="nav-item h6 m-0 my-3">
                     <a class="nav-link text-body" href="/Toy/AllProduct">TOY</a>
                 </li>
-             
+                  
                 <li class="nav-item h6 m-0 my-3">
                     <a class="nav-link text-body" href="/Lego/LegoCus">LEGO</a>
                 </li>
 
                  <li class="nav-item h6 m-0 my-3">
                     <div class="col md-4">
-                        <form action="/Toy/searchBuy" method="post">
+                        <form action="/Lego/searchAdmin" method="post">
                             <input class="form-control" type="search" name="name" placeholder="Search" required>
                         </form>
                     </div>
@@ -43,6 +43,7 @@
         </div>
     </div>
 
+    <div class="container col-md-12 mt-3">
 
        
         <table class="table table-light mt-2 text-center" border="2">
@@ -51,24 +52,26 @@
                      <th>Name</th>
                      <th>Image</th>
                      <th>Price</th>
-                     <th>Category</th>
-                     <th>Quantity</th>
+                     <th>Weight</th>
+                     <th>Height</th>
+                  
                 
                 </tr>
 
-            {{#each Toy }}
+            {{#each Lego }}
                   <tr>
             
                         <th>{{ name }}</th>                  
                         <th>
-                        <a href="/Toy/Detail/{{_id}}">
+                        <a href="/Lego/Detail/{{_id}}">
                            <img src="{{image}}" width="200" height="200" />
                         </a>
                         </th>                   
                         <th>{{ price }}$</th>
-                        <th>{{ category }}</th>
-                        <th>{{ quantity }}</th>    
-                        
+                        <th>{{ weight }}kg</th>
+                        <th>{{ height }}cm</th>   
+
+                       
                   </tr>
             {{/each}}
         </table>
