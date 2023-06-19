@@ -50,7 +50,7 @@ router.post('/Add', async (req, res) => {
    var Toy = req.body;
    await ToyModel.create(Toy)
    .then(() => { console.log ("Add new Toy succeed !")});
-   res.redirect('/Toy');
+   res.redirect('/Toy/AdminAllProduct');
 })
 
 router.get('/delete/:id', async(req, res) => {
@@ -72,7 +72,7 @@ router.post("/Edit/:id", (req, res) => {
     ToyModel.findByIdAndUpdate(req.params.id, req.body, (err) => {
       if (!err) {
         console.log("Edit Toy succeed !")
-        res.redirect("/Toy")
+        res.redirect("/Toy/AdminAllProduct")
       }
     })
 })
