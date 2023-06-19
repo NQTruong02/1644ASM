@@ -54,7 +54,7 @@ router.post('/Add', async (req, res) => {
 router.get('/delete/:id', async(req, res) => {
    await ToyModel.findByIdAndDelete(req.params.id)
    .then(() => { console.log ('Delete Toy succeed !')});
-   res.redirect('/Toy');
+   res.redirect('/Toy/AdminAllProduct');
 })
 
 
@@ -74,9 +74,6 @@ router.post("/Edit/:id", (req, res) => {
       }
     })
 })
-
-
-
 
 
 //search admin

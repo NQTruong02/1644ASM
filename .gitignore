@@ -1,1 +1,60 @@
 node_modules
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#     <optgroup label="Category">
+#             <option value="Toy">Toy</option>
+#             <option value="Car">Car</option>
+#               <option value="Robot">Robot</option>
+#             </optgroup>
+#       </select>
+
+
+
+
+
+
+
+#                           {{!-- {{#if pic}}
+#                     <td><img src="{{pic}}" alt="" width="150" height="150"></td>
+#                     {{else}}
+#                      <td style="color: red;"> No image</td>
+#                     {{/if}} --}}
+
+#  {{!-- {{#if (lar price)}}
+#                         <td style="color: red;">{{price}}</td>
+#                     {{else}}
+#                         <td>{{price}}</td>
+#                     {{/if}} --}}
