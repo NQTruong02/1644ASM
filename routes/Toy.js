@@ -79,19 +79,21 @@ router.post("/Edit/:id", (req, res) => {
 
 
 
-//search function
-//   router.post('/Toy/search', async (req, res) => {
-//      var keyword = req.body.keyword;
-//      var search = await ToyModel.find({ name: new RegExp(keyword, "i")})
-//     res.render('Toy/AllProduct', { Toy : search })
-// })
 
 
-router.post("/search", async (req, res) => {
-   const search = req.body.search;
-   const results = await ToyModel.find({ name: new RegExp(search, "i")});
-   console.log(results);
-   res.render("Toy/AdminAllProduct", { results: results })
+//search admin
+router.post("/searchAdmin", async (req, res) => {
+   var search = req.body.name;
+   var results = await ToyModel.find({ name: new RegExp(search, "i")});
+   
+   res.render("Toy/AdminAllProduct", { Toy: results })
+})
+//search customer
+router.post("/searchBuy", async (req, res) => {
+   var search = req.body.name;
+   var resultsBuy = await ToyModel.find({ name: new RegExp(search, "i")});
+   
+   res.render("Toy/AllProduct", { Toy: resultsBuy })
 })
 
 
